@@ -10,6 +10,8 @@ import UIKit
 import Flutter
 
 class ViewController: UIViewController {
+    private let controller = FlutterViewController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let button = UIButton(type: .custom)
@@ -18,10 +20,20 @@ class ViewController: UIViewController {
         button.frame = CGRect(x: 80.0, y: 210.0, width: 160.0, height: 40.0)
         button.backgroundColor = UIColor.blue
         self.view.addSubview(button)
+
+        _ = controller.view
     }
 
     @objc func handleButtonAction() {
-        let flutterViewController = FlutterViewController()
-        self.present(flutterViewController, animated: false, completion: nil)
+        present(controller, animated: true) {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 200000), execute: {
+                self.controller.dismiss(animated: true, completion: nil)
+            })
+        }
+        let batteryChannel = FlutterMethodChannel(name: "com.takecian.flutter/method",
+                                                  binaryMessenger: self.controller)
+        batteryChannel.invokeMethod("get", arguments: nil) { result in
+            print(result)
+        }
     }
 }

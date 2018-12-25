@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,7 +36,6 @@ class MyHomePage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
   final String title;
 
   @override
@@ -43,7 +43,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  static const MethodChannel methodChannel = MethodChannel('com.takecian.flutter/method');
+  static const EventChannel eventChannel = EventChannel('com.takecian.flutter/event');
   int _counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
+
+    methodChannel.setMethodCallHandler((MethodCall call) async {
+      return "heyhey";
+    });
+  }
+
+  void _onEvent(Object event) {
+    setState(() {
+
+    });
+  }
+
+  void _onError(Object error) {
+    setState(() {
+
+    });
+  }
 
   void _incrementCounter() {
     setState(() {
