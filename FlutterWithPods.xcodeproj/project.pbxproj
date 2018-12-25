@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BA3260F4C5A2C947CDAD69C /* Pods_FlutterWithPods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA8FD874D0F7D200924BB9B /* Pods_FlutterWithPods.framework */; };
 		64D41EB521D201B000C61120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D41EB421D201B000C61120 /* AppDelegate.swift */; };
 		64D41EB721D201B000C61120 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D41EB621D201B000C61120 /* ViewController.swift */; };
 		64D41EBA21D201B000C61120 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64D41EB821D201B000C61120 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32DBCC40EE51833C7B7B457D /* Pods-FlutterWithPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterWithPods.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlutterWithPods/Pods-FlutterWithPods.release.xcconfig"; sourceTree = "<group>"; };
 		64D41EB121D201B000C61120 /* FlutterWithPods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterWithPods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D41EB421D201B000C61120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64D41EB621D201B000C61120 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		64D41EC521D201B300C61120 /* FlutterWithPodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlutterWithPodsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D41EC921D201B300C61120 /* FlutterWithPodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterWithPodsTests.swift; sourceTree = "<group>"; };
 		64D41ECB21D201B300C61120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EA8FD874D0F7D200924BB9B /* Pods_FlutterWithPods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlutterWithPods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD44E7D463B12CCEFAEE8E66 /* Pods-FlutterWithPods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterWithPods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlutterWithPods/Pods-FlutterWithPods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA3260F4C5A2C947CDAD69C /* Pods_FlutterWithPods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F0818FB48E136173528275D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EA8FD874D0F7D200924BB9B /* Pods_FlutterWithPods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		64D41EA821D201B000C61120 = {
 			isa = PBXGroup;
 			children = (
 				64D41EB321D201B000C61120 /* FlutterWithPods */,
 				64D41EC821D201B300C61120 /* FlutterWithPodsTests */,
 				64D41EB221D201B000C61120 /* Products */,
+				E0C4558FE98EC36EB4931F49 /* Pods */,
+				0F0818FB48E136173528275D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +111,15 @@
 			path = FlutterWithPodsTests;
 			sourceTree = "<group>";
 		};
+		E0C4558FE98EC36EB4931F49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD44E7D463B12CCEFAEE8E66 /* Pods-FlutterWithPods.debug.xcconfig */,
+				32DBCC40EE51833C7B7B457D /* Pods-FlutterWithPods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64D41ECE21D201B300C61120 /* Build configuration list for PBXNativeTarget "FlutterWithPods" */;
 			buildPhases = (
+				80FE975FADE7412209ADD4B5 /* [CP] Check Pods Manifest.lock */,
 				64D41EAD21D201B000C61120 /* Sources */,
 				64D41EAE21D201B000C61120 /* Frameworks */,
 				64D41EAF21D201B000C61120 /* Resources */,
+				A9F617730B9C59F9E7102813 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +217,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80FE975FADE7412209ADD4B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlutterWithPods-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9F617730B9C59F9E7102813 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlutterWithPods/Pods-FlutterWithPods-frameworks.sh",
+				"${PODS_ROOT}/../flutter_lib/.ios/Flutter/engine/Flutter.framework",
+				"${BUILT_PRODUCTS_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlutterPluginRegistrant.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlutterWithPods/Pods-FlutterWithPods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64D41EAD21D201B000C61120 /* Sources */ = {
@@ -291,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -346,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -358,6 +433,7 @@
 		};
 		64D41ECF21D201B300C61120 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD44E7D463B12CCEFAEE8E66 /* Pods-FlutterWithPods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,6 +452,7 @@
 		};
 		64D41ED021D201B300C61120 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32DBCC40EE51833C7B7B457D /* Pods-FlutterWithPods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
