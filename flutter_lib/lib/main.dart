@@ -69,15 +69,23 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  Future<void>  _incrementCounter() async {
+    try {
+      final int result = await methodChannel.invokeMethod('get');
+      setState(() {
+        _counter += result;
+      });
+    } on PlatformException catch (e) {
+      print(e);
+    }
+  }
+
+  Future<void> _backTapped() async {
+    try {
+      await methodChannel.invokeMethod('back');
+    } on PlatformException catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -120,6 +128,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
+            ),
+            RaisedButton(
+              child: Text('戻る'),
+              onPressed: _backTapped,
             ),
           ],
         ),

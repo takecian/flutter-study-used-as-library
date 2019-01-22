@@ -10,30 +10,25 @@ import UIKit
 import Flutter
 
 class ViewController: UIViewController {
-    private let controller = FlutterViewController()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button = UIButton(type: .custom)
-        button.addTarget(self, action: #selector(handleButtonAction), for: .touchUpInside)
-        button.setTitle("Press me", for: .normal)
-        button.frame = CGRect(x: 80.0, y: 210.0, width: 160.0, height: 40.0)
-        button.backgroundColor = UIColor.blue
-        self.view.addSubview(button)
-
-        _ = controller.view
     }
 
-    @objc func handleButtonAction() {
-        present(controller, animated: true) {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 200000), execute: {
-                self.controller.dismiss(animated: true, completion: nil)
-            })
-        }
-        let batteryChannel = FlutterMethodChannel(name: "com.takecian.flutter/method",
-                                                  binaryMessenger: self.controller)
-        batteryChannel.invokeMethod("get", arguments: nil) { result in
-            print(result)
-        }
+    @IBAction func buttonTapped(_ sender: Any) {
+        let controller = FlutterViewController()
+        navigationController?.pushViewController(controller, animated: true)
+        
+        let methodChannel = FlutterMethodChannel(name: "com.takecian.flutter/method", binaryMessenger: controller)
+        methodChannel.setMethodCallHandler({ [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
+            switch call.method {
+            case "get":
+                let randomValue = Int.random(in: 1..<10)
+                result(randomValue)
+            case "back":
+                self?.navigationController?.popViewController(animated: true)
+            default:
+                break
+            }
+        })
     }
 }
