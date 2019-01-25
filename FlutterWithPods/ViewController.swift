@@ -14,8 +14,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func buttonTapped(_ sender: Any) {
+    @IBAction func button1Tapped(_ sender: Any) {
         let controller = FlutterViewController()
+        controller.setInitialRoute("/home")
+        navigationController?.pushViewController(controller, animated: true)
+        
+        let methodChannel = FlutterMethodChannel(name: "com.takecian.flutter/method", binaryMessenger: controller)
+        methodChannel.setMethodCallHandler({ [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
+            switch call.method {
+            case "get":
+                let randomValue = Int.random(in: 1..<10)
+                result(randomValue)
+            case "back":
+                self?.navigationController?.popViewController(animated: true)
+            default:
+                break
+            }
+        })
+    }
+    
+    
+    @IBAction func button2Tapped(_ sender: Any) {
+        let controller = FlutterViewController()
+        controller.setInitialRoute("/sample")
         navigationController?.pushViewController(controller, animated: true)
         
         let methodChannel = FlutterMethodChannel(name: "com.takecian.flutter/method", binaryMessenger: controller)
