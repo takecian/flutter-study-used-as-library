@@ -86,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
     } on PlatformException catch (e) {
       print(e);
     }
+    // SystemNavigator.pop(); // これでもいいらしい
   }
 
   @override
